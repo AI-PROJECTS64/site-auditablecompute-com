@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Auditable Compute - Reference for verifiable execution</title>
+  <meta name="description" content="Auditable Compute explains evidence of execution: what ran, where, and under which controls across AI, cloud and regulated workloads." />
+
+  <link rel="canonical" href="https://www.auditablecompute.com/" />
+  <link rel="alternate" href="https://www.auditablecompute.com/" hreflang="en" />
+  <link rel="alternate" href="https://www.auditablecompute.com/" hreflang="fr" />
+  <link rel="alternate" href="https://www.auditablecompute.com/" hreflang="x-default" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Auditable Compute - Reference for verifiable execution" />
+  <meta property="og:description" content="Auditable Compute explains evidence of execution: what ran, where, and under which controls across AI, cloud and regulated workloads." />
+  <meta property="og:url" content="https://www.auditablecompute.com/" />
+  <meta property="og:image" content="https://www.auditablecompute.com/og.jpg" />
+  <meta property="og:image:alt" content="AuditableCompute.com (Auditable Compute)" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auditable Compute - Reference for verifiable execution" />
+  <meta name="twitter:description" content="Auditable Compute explains evidence of execution: what ran, where, and under which controls across AI, cloud and regulated workloads." />
+  <meta name="twitter:image" content="https://www.auditablecompute.com/og.jpg" />
+
+  <meta name="theme-color" content="#050914" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="/logo-auditablecompute.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"AuditableCompute.com",
+    "url":"https://www.auditablecompute.com/",
+    "description":"Auditable Compute explains evidence of execution: what ran, where, and under which controls across AI, cloud and regulated workloads.",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.auditablecompute.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#050914;
+      --card:#0b1220;
+      --border:rgba(255,255,255,.08);
+      --text:#e9eefc;
+      --muted:rgba(233,238,252,.78);
+      --muted2:rgba(233,238,252,.62);
+      --accent:#22e6c6;
+      --accent2:#7aa7ff;
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(900px 500px at 25% 0%, rgba(34,230,198,.16), transparent 55%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(122,167,255,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .wrap{max-width:1024px;margin:0 auto;padding:28px 18px 44px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 14px;border:1px solid var(--border);border-radius:var(--radius);
+      background: rgba(11,18,32,.7);backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand .mark{
+      width:40px;height:40px;border-radius:12px;border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(34,230,198,.20), rgba(122,167,255,.10));
+      display:grid;place-items:center;overflow:hidden;
+    }
+    .brand .mark img{width:32px;height:32px;object-fit:contain}
+    .brand .txt{min-width:0}
+    .brand .name{font-weight:700;font-size:14px;line-height:1.1}
+    .brand .sub{font-size:12px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      padding:6px 10px;border-radius:999px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(34,230,198,.6)}
+    .lang{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:10px 12px;border-radius:12px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      text-decoration:none;font-weight:650;font-size:13px;
+      transition: transform .05s ease, border-color .15s ease, background .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{border-color:rgba(34,230,198,.35);background: rgba(34,230,198,.06)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(34,230,198,.20), rgba(34,230,198,.10));
+      border-color: rgba(34,230,198,.35);
+    }
+    .btn.small{padding:8px 10px;border-radius:10px;font-weight:700}
+    .btn.active{border-color:rgba(122,167,255,.55);background: rgba(122,167,255,.10)}
+    main{margin-top:16px}
+    .card{
+      background: rgba(11,18,32,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px 18px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:.3px;
+    }
+    .hero .logo{
+      width:110px;height:110px;object-fit:contain;
+      margin:12px 0 8px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.02);
+      padding:10px;
+    }
+    .muted{color:var(--muted);line-height:1.6}
+    .muted strong,.muted b{color:var(--text)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:10px}
+    @media (min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    h3{margin:0 0 10px;font-size:16px}
+    .list{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{
+      padding:10px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;line-height:1.35;
+    }
+    a.chip{text-decoration:none}
+    a.chip:hover{border-color:rgba(34,230,198,.35);background: rgba(34,230,198,.06);color:var(--text)}
+    .foot{
+      margin-top:16px;
+      font-size:12px;
+      color:var(--muted2);
+      line-height:1.55;
+    }
+    [hidden]{display:none !important}
+    .ico{width:16px;height:16px;opacity:.9}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">
+          <img src="/logo-auditablecompute.png" alt="" />
+        </div>
+        <div class="txt">
+          <div class="name">AuditableCompute.com</div>
+          <div class="sub">Independent reference for evidence of execution</div>
+        </div>
+      </div>
+
+      <div class="badge" title="Independent informational resource; domain may be available for acquisition.">
+        <span class="dot"></span>
+        Digital asset available for acquisition
+      </div>
+
+      <div class="lang" aria-label="Language">
+        <button class="btn small" id="btn-en" type="button">EN</button>
+        <button class="btn small" id="btn-fr" type="button">FR</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- EN -->
+      <section class="card hero" data-en>
+        <h1>AuditableCompute.com</h1>
+        <img class="logo" src="/logo-auditablecompute.png" alt="AuditableCompute.com" loading="eager" />
+        <p class="muted">
+          <b>Auditable Compute</b> is the capability to produce <b>independent, reviewable evidence</b> that computation happened as claimed: what ran, where it ran, under which protections, and what the system recorded during runtime.<br />
+          AuditableCompute.com is reserved as a <b>vendor-neutral, non-commercial banner</b> for a potential <b>reference hub</b> dedicated to execution evidence across <b>confidential AI, cloud and regulated workloads</b>.<br />
+          The focus is strictly on <b>concepts, terminology and evidence quality</b> - not on selling products, audits, certifications, consulting, compliance or security services.<br />
+          Intended for <b>standards initiatives, audit and assurance practices, cloud and confidential computing ecosystems, cyber insurers, regulators, critical-infrastructure operators and research organisations</b> that may wish to steward a public-facing resource under a clear, descriptive label.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:contact@auditablecompute.com?subject=AuditableCompute.com%20-%20NDA%20%2F%20Offer">Submit an offer / Request NDA</a>
+          <a class="btn" href="/concept-note.html">Concept Note</a>
+          <a class="btn" href="#value-en">Why this name?</a>
+          <a class="btn" href="https://www.linkedin.com/company/auditablecompute" target="_blank" rel="noopener" aria-label="Open on LinkedIn">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          <b>Important notice:</b> AuditableCompute.com is a <b>descriptive semantic asset</b>. It is <b>not</b> a certification authority, standards body, audit firm, security provider, or vendor.
+          It does <b>not</b> provide legal, compliance, audit or security advice, and does <b>not</b> certify workloads or environments.
+          Any initiative operating under this banner would be entirely designed and governed by its acquirer, under its own responsibilities and applicable laws.
+        </p>
+      </section>
+
+      <section id="value-en" class="card" style="margin-top:16px" data-en>
+        <div class="grid">
+          <div>
+            <h3>Why AuditableCompute.com is valuable</h3>
+            <div class="list">
+              <div class="chip">Board-level wording bridging engineering primitives (attestation, TEEs, proofs, append-only logs) with assurance requirements (auditability, accountability, independent review).</div>
+              <div class="chip">Neutral .com banner suitable for a public reference hub on evidence of execution, separate from any vendor claim or product line.</div>
+              <div class="chip">Durable concept across confidential computing, AI governance, third-party cloud reliance, incident response reconstruction and liability scrutiny.</div>
+              <div class="chip">Defensive semantic asset if execution evidence becomes a standard requirement for regulated AI and high-stakes cloud workloads.</div>
+              <div class="chip">Naturally maps to the assurance layer: what can be proven, what can be logged, and what remains an assumption.</div>
+            </div>
+          </div>
+          <div>
+            <h3>Illustrative use cases</h3>
+            <div class="list">
+              <div class="chip">Vendor-neutral landing page defining auditable compute and mapping primary sources, standards references and evidence terminology.</div>
+              <div class="chip">Pattern library for auditable workloads (single-tenant audit trails, multi-party confidential computation, agentic “flight recorder” logs).</div>
+              <div class="chip">Evidence-quality taxonomy for boards and auditors: verifiable vs auditable vs assumed claims, explicit trust assumptions.</div>
+              <div class="chip">Framework portal for compute accountability in regulated AI programmes, cloud risk management and third-party assurance.</div>
+              <div class="chip">Neutral banner for a consortium or foundation exploring compute receipts, signed outputs and execution evidence practices.</div>
+            </div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">
+          This site does <b>not</b> sell products or services. It documents an emerging category and presents AuditableCompute.com as a <b>descriptive digital asset</b> that may be available for acquisition by qualified institutions.
+        </p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-en>
+        <h3>Start here</h3>
+        <p class="muted">Auditable compute connects technical building blocks to governance and assurance needs. Four entry points:</p>
+        <div class="list">
+          <div class="chip"><b>Glossary:</b> the language of attestation, confidential computing, verifiable execution and compute receipts.</div>
+          <div class="chip"><b>Patterns:</b> common architectures for auditable workloads (single-tenant to multi-party).</div>
+          <div class="chip"><b>Evidence taxonomy:</b> what can be proven, what can only be logged, and what remains an assumption.</div>
+          <div class="chip"><b>Risk framing:</b> how boards and auditors evaluate evidence quality and accountability.</div>
+        </div>
+        <p class="muted" style="margin-top:10px">
+          The term <b>“verifiable compute”</b> is often used when emphasising cryptographic proof. <b>Auditable compute</b> emphasises <b>independent review</b> and evidence usable for audit, assurance, investigations and accountability. Serious systems may combine both.
+        </p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-en>
+        <h3>Related category assets</h3>
+        <p class="muted">
+          Auditable Compute is part of a broader landscape of infrastructure governance and evidence. Depending on its strategy, a future owner may position AuditableCompute.com alongside:
+        </p>
+        <div class="list">
+          <a class="chip" href="https://www.computesovereignty.com" target="_blank" rel="noopener">ComputeSovereignty.com</a>
+          <a class="chip" href="https://www.computeintegrity.com" target="_blank" rel="noopener">ComputeIntegrity.com</a>
+          <a class="chip" href="https://www.signedresponse.com" target="_blank" rel="noopener">SignedResponse.com</a>
+          <a class="chip" href="https://www.modelsovereignty.com" target="_blank" rel="noopener">ModelSovereignty.com</a>
+          <a class="chip" href="https://www.globalriskarchitecture.com" target="_blank" rel="noopener">GlobalRiskArchitecture.com</a>
+          <a class="chip" href="https://www.systemiccyberrisk.com" target="_blank" rel="noopener">SystemicCyberRisk.com</a>
+        </div>
+        <p class="muted" style="margin-top:10px">
+          These examples are illustrative only. This site offers for sale the <b>AuditableCompute.com</b> domain name as a standalone intangible asset.
+        </p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-en>
+        <h3>Acquisition (secure process)</h3>
+        <p class="muted">
+          Typical institutional flow: <b>NDA → strategic discussion → formal offer → escrow → domain transfer</b>. The transaction focuses on the <b>AuditableCompute.com</b> domain name as an intangible digital asset.
+          No software, datasets, logs, indices, consulting, assurance services, certification programme or operational activity are included unless explicitly agreed in a separate contract.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:contact@auditablecompute.com?subject=AuditableCompute.com%20-%20NDA%20%2F%20Offer">Direct contact: contact@auditablecompute.com</a>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-en>
+        <h3>Documents / Briefs</h3>
+        <p class="muted">
+          Detailed AuditableCompute.com acquisition brief (2025-11) available in English for Cloud, AI, Security, Risk, Legal, Compliance and Executive teams.
+        </p>
+        <div class="cta">
+          <a class="btn" href="/Acquisition%20Brief%20auditacompute-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">Open Brief (EN)</a>
+          <a class="btn primary" href="/Acquisition%20Brief%20auditacompute-EN-202511.pdf" download="Acquisition-Brief-AuditableCompute-EN-202511.pdf" type="application/pdf">Download (EN, PDF)</a>
+        </div>
+      </section>
+
+      <!-- FR -->
+      <section class="card hero" data-fr hidden>
+        <h1>AuditableCompute.com</h1>
+        <img class="logo" src="/logo-auditablecompute.png" alt="AuditableCompute.com" loading="eager" />
+        <p class="muted">
+          <b>Auditable Compute</b> désigne la capacité à produire une <b>preuve indépendante et examinable</b> qu’un calcul a bien été exécuté comme annoncé : ce qui a tourné, où, sous quelles protections, et quelles traces ont été produites pendant l’exécution.<br />
+          AuditableCompute.com est réservé comme <b>bannière neutre et non commerciale</b> pour un futur <b>référentiel</b> dédié à la preuve d’exécution dans le <b>cloud, l’IA confidentielle et les environnements régulés</b>.<br />
+          Le périmètre porte sur <b>les concepts, le vocabulaire et la qualité de preuve</b> - sans vendre de produits, d’audits, de certifications, de conseil, ni de services conformité ou sécurité.<br />
+          Destiné à des <b>initiatives de standardisation, cabinets d’audit et d’assurance, acteurs du cloud et du confidential computing, assureurs cyber, régulateurs, opérateurs d’infrastructures critiques et organismes de recherche</b>.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:contact@auditablecompute.com?subject=AuditableCompute.com%20-%20NDA%20%2F%20Offre">Proposer une offre / Demander un NDA</a>
+          <a class="btn" href="/concept-note.html">Concept Note</a>
+          <a class="btn" href="#value-fr">Pourquoi ce nom ?</a>
+          <a class="btn" href="https://www.linkedin.com/company/auditablecompute" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <p class="muted" style="margin-top:10px">
+          <b>Note importante :</b> AuditableCompute.com est un <b>actif sémantique descriptif</b>. Ce n’est <b>pas</b> une autorité de certification, un organisme de normalisation, un cabinet d’audit, un fournisseur de sécurité, ni un éditeur.
+          Aucun conseil juridique, conformité, audit ou sécurité n’est fourni, et aucune certification n’est délivrée.
+        </p>
+      </section>
+
+      <section id="value-fr" class="card" style="margin-top:16px" data-fr hidden>
+        <div class="grid">
+          <div>
+            <h3>Pourquoi AuditableCompute.com est précieux</h3>
+            <div class="list">
+              <div class="chip">Un vocabulaire “board-level” qui relie primitives techniques (attestation, TEEs, preuves, journaux append-only) et exigences d’assurance (auditabilité, responsabilité, revue indépendante).</div>
+              <div class="chip">Une bannière .com neutre, adaptée à un hub public sur la preuve d’exécution, distincte de toute communication fournisseur.</div>
+              <div class="chip">Une catégorie durable à l’intersection du confidential computing, de la gouvernance IA, de la dépendance cloud, de la reconstruction post-incident et de l’opposabilité.</div>
+              <div class="chip">Un actif défensif si la preuve d’exécution devient une exigence standard pour l’IA régulée et les calculs à forte responsabilité.</div>
+              <div class="chip">Un cadrage naturel de la qualité de preuve : ce qui est prouvable, traçable, et ce qui reste hypothèse.</div>
+            </div>
+          </div>
+          <div>
+            <h3>Cas d’usage (illustratifs)</h3>
+            <div class="list">
+              <div class="chip">Page de référence neutre définissant l’auditabilité du calcul et cartographiant sources, standards et terminologie.</div>
+              <div class="chip">Bibliothèque de patterns (audit trails mono-acteur, calcul confidentiel multi-acteurs, “flight recorder” pour agents IA).</div>
+              <div class="chip">Taxonomie de preuve pour comités risques/audit : vérifiable vs auditable vs assumé, hypothèses explicites.</div>
+              <div class="chip">Portail “compute accountability” pour programmes IA en environnement régulé, gestion du risque cloud et assurance tierce.</div>
+              <div class="chip">Bannière neutre pour consortium/fondation autour des compute receipts, sorties signées et preuves d’exécution.</div>
+            </div>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:12px">
+          Ce site ne vend <b>aucun</b> produit ni service. Il documente une catégorie émergente et présente AuditableCompute.com comme actif numérique descriptif susceptible d’être cédé.
+        </p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-fr hidden>
+        <h3>Par où commencer</h3>
+        <p class="muted">Quatre entrées rapides :</p>
+        <div class="list">
+          <div class="chip"><b>Glossaire :</b> attestation, confidential computing, exécution vérifiable et compute receipts.</div>
+          <div class="chip"><b>Patterns :</b> architectures courantes, du mono-tenant au multi-acteurs.</div>
+          <div class="chip"><b>Taxonomie de preuve :</b> ce qui est prouvable, ce qui est seulement traçable, et ce qui reste hypothèse.</div>
+          <div class="chip"><b>Cadrage risque :</b> comment les comités audit et risques évaluent la qualité de preuve.</div>
+        </div>
+        <p class="muted" style="margin-top:10px">
+          “Verifiable compute” met l’accent sur la preuve cryptographique. “Auditable compute” met l’accent sur la revue indépendante et l’opposabilité. Les systèmes sérieux combinent souvent les deux.
+        </p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-fr hidden>
+        <h3>Actifs associés (même paysage gouvernance & preuve)</h3>
+        <p class="muted">Selon la stratégie, AuditableCompute.com peut coexister avec :</p>
+        <div class="list">
+          <a class="chip" href="https://www.computesovereignty.com" target="_blank" rel="noopener">ComputeSovereignty.com</a>
+          <a class="chip" href="https://www.computeintegrity.com" target="_blank" rel="noopener">ComputeIntegrity.com</a>
+          <a class="chip" href="https://www.signedresponse.com" target="_blank" rel="noopener">SignedResponse.com</a>
+          <a class="chip" href="https://www.modelsovereignty.com" target="_blank" rel="noopener">ModelSovereignty.com</a>
+          <a class="chip" href="https://www.globalriskarchitecture.com" target="_blank" rel="noopener">GlobalRiskArchitecture.com</a>
+          <a class="chip" href="https://www.systemiccyberrisk.com" target="_blank" rel="noopener">SystemicCyberRisk.com</a>
+        </div>
+        <p class="muted" style="margin-top:10px">Exemples illustratifs uniquement. Ce site propose la cession du nom de domaine <b>AuditableCompute.com</b> comme actif incorporel autonome.</p>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-fr hidden>
+        <h3>Acquisition (process sécurisé)</h3>
+        <p class="muted">
+          Flux typique : <b>NDA → échange stratégique → offre formelle → escrow → transfert</b>. La transaction porte sur le nom de domaine AuditableCompute.com. Aucun logiciel ni service n’est inclus sauf accord explicite séparé.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:contact@auditablecompute.com?subject=AuditableCompute.com%20-%20NDA%20%2F%20Offre">Contact direct : contact@auditablecompute.com</a>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px" data-fr hidden>
+        <h3>Documents / Briefs</h3>
+        <p class="muted">Brief d’acquisition détaillé AuditableCompute.com (2025-11), version française.</p>
+        <div class="cta">
+          <a class="btn" href="/Acquisition%20Brief%20auditacompute-202511.pdf" target="_blank" rel="noopener" type="application/pdf">Ouvrir le brief (FR)</a>
+          <a class="btn primary" href="/Acquisition%20Brief%20auditacompute-202511.pdf" download="Brief-Acquisition-AuditableCompute-FR-202511.pdf" type="application/pdf">Télécharger (FR, PDF)</a>
+        </div>
+      </section>
+
+      <p class="foot">
+        © AuditableCompute.com - descriptive digital asset for the emerging category of “auditable compute” and evidence of execution.
+        Independent informational resource. No affiliation with any vendor, consortium, regulator, public institution or certification programme.
+        No services are offered. No legal, compliance, audit or security advice is provided via this site.
+        Contact: <a href="mailto:contact@auditablecompute.com">contact@auditablecompute.com</a>
+      </p>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      var btnEn = document.getElementById('btn-en');
+      var btnFr = document.getElementById('btn-fr');
+      var blocksEn = document.querySelectorAll('[data-en]');
+      var blocksFr = document.querySelectorAll('[data-fr]');
+
+      function setLang(lang){
+        var isEn = (lang === 'en');
+        blocksEn.forEach(function(el){ el.hidden = !isEn; });
+        blocksFr.forEach(function(el){ el.hidden = isEn; });
+        btnEn.classList.toggle('active', isEn);
+        btnFr.classList.toggle('active', !isEn);
+        document.documentElement.lang = isEn ? 'en' : 'fr';
+        try { localStorage.setItem('lang', lang); } catch(e) {}
+      }
+
+      btnEn.addEventListener('click', function(){ setLang('en'); });
+      btnFr.addEventListener('click', function(){ setLang('fr'); });
+
+      var saved = 'en';
+      try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
+      setLang(saved === 'fr' ? 'fr' : 'en');
+    })();
+  </script>
+</body>
+</html>
