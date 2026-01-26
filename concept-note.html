@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Concept Note | AuditableCompute.com</title>
+  <meta name="description" content="Auditable Compute - evidence of execution for confidential AI and regulated workloads. Concepts, terminology, building blocks and disclaimers." />
+
+  <link rel="canonical" href="https://www.auditablecompute.com/concept-note.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Auditable Compute - Concept Note" />
+  <meta property="og:description" content="Evidence of execution for confidential AI and regulated workloads: concepts, terminology, building blocks and disclaimers." />
+  <meta property="og:url" content="https://www.auditablecompute.com/concept-note.html" />
+  <meta property="og:image" content="https://www.auditablecompute.com/og.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auditable Compute - Concept Note" />
+  <meta name="twitter:description" content="Evidence of execution for confidential AI and regulated workloads: concepts, terminology, building blocks and disclaimers." />
+  <meta name="twitter:image" content="https://www.auditablecompute.com/og.jpg" />
+
+  <meta name="theme-color" content="#050914" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="/logo-auditablecompute.png" />
+
+  <style>
+    :root{
+      --bg:#050914;
+      --card:#0b1220;
+      --border:rgba(255,255,255,.08);
+      --text:#e9eefc;
+      --muted:rgba(233,238,252,.78);
+      --muted2:rgba(233,238,252,.62);
+      --accent:#22e6c6;
+      --accent2:#7aa7ff;
+      --shadow:0 18px 55px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(900px 500px at 25% 0%, rgba(34,230,198,.16), transparent 55%),
+                  radial-gradient(900px 500px at 85% 10%, rgba(122,167,255,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      letter-spacing:.2px;
+    }
+    a{color:inherit}
+    .wrap{max-width:1024px;margin:0 auto;padding:28px 18px 44px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 14px;border:1px solid var(--border);border-radius:var(--radius);
+      background: rgba(11,18,32,.7);backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .mark{
+      width:40px;height:40px;border-radius:12px;border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(34,230,198,.20), rgba(122,167,255,.10));
+      display:grid;place-items:center;overflow:hidden;
+    }
+    .mark img{width:32px;height:32px;object-fit:contain}
+    .txt{min-width:0}
+    .name{font-weight:800;font-size:14px;line-height:1.1}
+    .sub{font-size:12px;color:var(--muted2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      padding:6px 10px;border-radius:999px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(34,230,198,.6)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:10px 12px;border-radius:12px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      text-decoration:none;font-weight:750;font-size:13px;
+    }
+    .btn:hover{border-color:rgba(34,230,198,.35);background: rgba(34,230,198,.06)}
+    main{margin-top:16px}
+    .card{
+      background: rgba(11,18,32,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px 18px;
+    }
+    h1{margin:0;font-size:26px}
+    .muted{color:var(--muted);line-height:1.65}
+    h2{margin:18px 0 10px;font-size:16px}
+    ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.65}
+    li{margin:6px 0}
+    .section-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      padding:6px 10px;border-radius:999px;border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      margin-bottom:10px;
+    }
+    .foot{
+      margin-top:16px;
+      font-size:12px;
+      color:var(--muted2);
+      line-height:1.55;
+    }
+    hr{border:0;border-top:1px solid rgba(255,255,255,.08);margin:16px 0}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"><img src="/logo-auditablecompute.png" alt="" /></div>
+        <div class="txt">
+          <div class="name">AuditableCompute.com</div>
+          <div class="sub">Concept note - Evidence of execution</div>
+        </div>
+      </div>
+
+      <div class="badge"><span class="dot"></span> Concept Note</div>
+
+      <a class="btn" href="/">Back to homepage</a>
+    </header>
+
+    <main>
+      <section class="card">
+        <h1>Auditable Compute - Evidence of Execution for Confidential AI and Regulated Workloads</h1>
+        <p class="muted" style="margin-top:10px">
+          This concept note documents the concepts, terminology and building blocks behind <b>auditable compute</b>: the capability to produce independent, reviewable evidence that computation happened as claimed.
+          It is designed for engineers, auditors, risk leaders and policy teams who need a shared language for execution evidence across cloud, AI and sensitive workloads.
+        </p>
+        <p class="muted" style="margin-top:10px">
+          <b>Non-commercial posture:</b> This site does not certify systems, does not claim to define a standard, and does not provide legal, compliance or security advice.
+          It is an informational resource and a descriptive domain name that may be available for acquisition.
+        </p>
+
+        <hr />
+
+        <div class="section-tag"><span class="dot"></span> 1. Purpose</div>
+        <p class="muted">
+          Define auditable compute and make evidence quality explicit: what can be proven, what can only be logged, and what remains an assumption. Provide a neutral reference layer for cross-functional alignment.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 2. Working definition</div>
+        <p class="muted">
+          Auditable compute is the ability to generate tamper-resistant, reviewable evidence about an execution: <b>what ran</b>, <b>where it ran</b>, <b>under which controls</b>, and <b>what the system recorded during runtime</b>.
+          Evidence may include attestation reports, integrity measurements, append-only audit trails, signed outputs, and optionally cryptographic proofs.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 3. The problem</div>
+        <p class="muted">
+          Critical decisions increasingly rely on external compute. Cloud, multi-tenant infrastructure, GPU workloads and autonomous AI systems introduce new failure modes:
+          invisible configuration drift, ambiguous provenance, insider threats, supply-chain compromise, and uncertainty about what was executed.
+          When incidents occur, organisations must reconstruct facts under scrutiny. Without execution evidence, governance collapses into narratives.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 4. Why “auditable” (not only “verifiable”)</div>
+        <p class="muted">
+          The industry may favour “verifiable” when emphasising cryptographic proof. Auditable compute complements that by emphasising independent review:
+          evidence usable for audit, assurance, investigations and accountability. In practice, many systems will combine both:
+          verifiable primitives for stronger guarantees and auditable records for operational governance.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 5. Evidence quality - a practical taxonomy</div>
+        <p class="muted">Auditable compute is not a single guarantee. Evidence strength varies, for example:</p>
+        <ul>
+          <li><b>Evidence of environment:</b> what hardware and security mode was used.</li>
+          <li><b>Evidence of software identity:</b> what code or image was loaded.</li>
+          <li><b>Evidence of execution context:</b> configuration, policy, identity and access.</li>
+          <li><b>Evidence of inputs/outputs:</b> what data and outputs were observed.</li>
+          <li><b>Evidence of integrity over time:</b> append-only logs, signatures, anchoring.</li>
+          <li><b>Optional proofs:</b> cryptographic proofs that reduce trust assumptions.</li>
+        </ul>
+        <p class="muted" style="margin-top:10px">
+          The goal is clarity: which claims can be proven, which can be evidenced, and which remain assumptions.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 6. Typical architectures</div>
+        <p class="muted">
+          Common patterns include single-party auditable workloads (enterprise audit trails), multi-party confidential computation (trusted enclaves and shared governance),
+          and agentic systems that require “flight recorder” logs for actions and outputs. Architectural choices depend on threat model, regulation and acceptable trust assumptions.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 7. Use cases where it becomes mandatory</div>
+        <p class="muted">
+          Auditable compute becomes essential in regulated or high-liability settings: finance, healthcare, public sector, critical infrastructure, defence supply chains,
+          and high-risk AI applications that must support post-incident reconstruction, internal audit and external assurance.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 8. Non-goals</div>
+        <p class="muted">
+          This site does not certify systems, does not claim to define a standard, and does not provide legal or compliance advice.
+          It is a neutral reference mapping existing terminology, techniques and design patterns.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 9. References and related concepts</div>
+        <p class="muted">
+          Confidential computing, hardware attestation, trusted execution environments, append-only logs, signed outputs, verifiable computation, compute receipts,
+          AI assurance and governance frameworks, incident response reconstruction and third-party risk.
+        </p>
+
+        <div class="section-tag"><span class="dot"></span> 10. Disclaimer</div>
+        <p class="muted">
+          Independent informational resource. Not affiliated with any vendor, consortium, regulator, or certification authority. No services are offered.
+        </p>
+
+        <hr />
+
+        <p class="muted">
+          <b>Contact:</b> <a href="mailto:contact@auditablecompute.com">contact@auditablecompute.com</a><br />
+          <b>Home:</b> <a href="https://www.auditablecompute.com/">https://www.auditablecompute.com/</a>
+        </p>
+
+        <p class="foot">
+          © AuditableCompute.com - descriptive digital asset for “aud
